@@ -1,40 +1,26 @@
-import styled from 'styled-components';
+import React from 'react';
+import {
+  StyledStatistics,
+  StyledStatisticsUl,
+  StyledStatisticsLi,
+  StyledStatisticsH2,
+} from './Statistics.styled';
+
 export const Statistics = ({ title, stats }) => {
   return (
-    <section className="statistics">
-      {title ? <StatisticsH2 className="title">{title}</StatisticsH2> : null}
+    <StyledStatistics className="statistics">
+      {title && (
+        <StyledStatisticsH2 className="title">{title}</StyledStatisticsH2>
+      )}
 
-      <StatisticsUl className="stat-list">
+      <StyledStatisticsUl className="stat-list">
         {stats.map(({ id, label, percentage }) => (
-          <StatisticsLi className="item" key={id}>
+          <StyledStatisticsLi className="item" key={id}>
             <span className="label">{label}</span>
             <span className="percentage">{percentage}%</span>
-          </StatisticsLi>
+          </StyledStatisticsLi>
         ))}
-      </StatisticsUl>
-    </section>
+      </StyledStatisticsUl>
+    </StyledStatistics>
   );
 };
-
-const StatisticsUl = styled.ul`
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-`;
-const StatisticsLi = styled.li`
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-`;
-const StatisticsH2 = styled.h2`
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-`;

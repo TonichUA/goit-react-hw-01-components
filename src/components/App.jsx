@@ -1,11 +1,14 @@
-import { data } from './Statistics/data';
-import { Statistics } from './Statistics/Statistics';
-import { Profile } from './Profile/Profile';
-import { user } from './Profile/user';
-import { friends } from './FriendList/FriendListData';
-import { FriendList } from './FriendList/FriendList';
-import { transactions } from './TransactionHistory/TransactionHistoryData';
-import { TransactionHistory } from './TransactionHistory/TransactionHistory';
+import React from 'react';
+import {
+  Statistics,
+  Profile,
+  user,
+  friends,
+  FriendList,
+  transactions,
+  data,
+  TransactionHistory,
+} from './Data/DataComponets';
 
 export const App = () => {
   return (
@@ -16,15 +19,15 @@ export const App = () => {
         location={user.location}
         avatar={user.avatar}
         stats={user.stats}
-      ></Profile>
+      />
       <div>
         <Statistics title="Upload stats" stats={data} />
       </div>
       <div>
-        <FriendList friends={friends}></FriendList>
+        <FriendList friends={friends} />
       </div>
       <div>
-        <TransactionHistory items={transactions} />;
+        <TransactionHistory items={transactions} />
       </div>
     </div>
   );

@@ -1,7 +1,9 @@
-import styled from 'styled-components';
+import React from 'react';
+import { StyledTransactionHistoryTable } from './TransactionHistory.styled';
+
 export const TransactionHistory = ({ items }) => {
   return (
-    <TransactionHistoryTable className="transaction-history">
+    <StyledTransactionHistoryTable className="transaction-history">
       <thead>
         <tr>
           <th>Type</th>
@@ -18,11 +20,6 @@ export const TransactionHistory = ({ items }) => {
           </tr>
         ))}
       </tbody>
-    </TransactionHistoryTable>
+    </StyledTransactionHistoryTable>
   );
 };
-const TransactionHistoryTable = styled.table`
-  list-style: none;
-  margin: 0 auto;
-  text-align: center;
-`;
